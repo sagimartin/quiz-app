@@ -14,6 +14,15 @@ export default function Home() {
     setShowAnswer(true);
   }
 
+  function handleNextQuestion() {
+    setCurrentQuestion((prevQuestion) => prevQuestion + 1);
+    setShowAnswer(false);
+    if (currentQuestion === questions.length - 1) {
+      setShowResult(true);
+      setCurrentQuestion(0);
+    }
+  }
+
   return (
     <div className="quiz-app">
       <div className="quiz-header">
@@ -43,8 +52,12 @@ export default function Home() {
         </div>
       </div>
       <div className="quiz-footer">
-        <p>1 out of 5</p>
-        <button className="next">Next</button>
+        <p>
+          {currentQuestion + 1} out of {questions.length}
+        </p>
+        <button onClick={handleNextQuestion} className="next">
+          Next
+        </button>
       </div>
     </div>
   );
