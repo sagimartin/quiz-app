@@ -28,6 +28,11 @@ export default function Home() {
     }
   }
 
+  function restartQuiz() {
+    setShowResult(false);
+    setCurrentQuestion(0);
+  }
+
   return (
     <>
       {showResults ? (
@@ -35,6 +40,7 @@ export default function Home() {
           <h2>
             You scored {score} out {questions.length}{" "}
           </h2>
+          <button onClick={restartQuiz}>Start the Quiz Again</button>
         </div>
       ) : (
         <div className="quiz-app">
