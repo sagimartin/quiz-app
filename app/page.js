@@ -36,11 +36,11 @@ export default function Home() {
   return (
     <>
       {showResults ? (
-        <div className="quiz-app">
+        <div className="score-message">
           <h2>
             You scored {score} out {questions.length}{" "}
           </h2>
-          <button onClick={restartQuiz}>Start the Quiz Again</button>
+          <button className="restart-button" onClick={restartQuiz}>Start the Quiz Again</button>
         </div>
       ) : (
         <div className="quiz-app">

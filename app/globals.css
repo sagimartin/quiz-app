@@ -36,7 +36,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.quiz-app {
+.quiz-app,
+.score-message {
   width: 40vw;
   color: black;
   background-color: white;
@@ -82,9 +83,12 @@ body {
 }
 
 .options button {
+  width: 100%;
   border: 2px solid black;
   border-radius: 5px;
   background-color: white;
+  text-align: start;
+  padding: 0.7rem 1rem;
 }
 
 .quiz-footer {
@@ -106,10 +110,24 @@ button {
   cursor: pointer;
 }
 
-.next {
+.next,
+.restart-button {
   border-radius: 25px;
   background-color: black;
   color: white;
+}
+
+.score-message {
+  align-items: center;
+}
+
+.score-message h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.restart-button {
+  width: fit-content;
 }
 
 @media (max-width: 900px) {
