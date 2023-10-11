@@ -49,7 +49,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="quiz-container">
       {showResults ? (
         <div className="score-message">
           <h2>
@@ -111,6 +111,14 @@ export default function Home() {
           </div>
         </div>
       )}
-    </>
+      <div className="credit">
+        <p>
+          2023 //{" "}
+          <a href="https://www.sagimartin.com" target="_blank">
+            @sagimartin
+          </a>
+        </p>
+      </div>
+    </div>
   );
 }

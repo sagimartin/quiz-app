@@ -118,7 +118,6 @@ button {
   color: white;
 }
 
-
 .score-message {
   align-items: center;
 }
@@ -151,8 +150,14 @@ button {
   width: fit-content;
 }
 
+.credit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
 @media (max-width: 900px) {
-  .quiz-app, .score-message {
+  .quiz-app,
+  .score-message {
     width: 80vw;
   }
 }
