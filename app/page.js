@@ -8,6 +8,7 @@ export default function Home() {
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
   const [showResults, setShowResult] = useState(false);
+  const [isNextDisabled, setIsNextDisabled] = useState(true);
 
   const question = questions[currentQuestion];
 
@@ -27,11 +28,13 @@ export default function Home() {
     if (option === question.answer) {
       setScore((prevScore) => prevScore + 1);
     }
+    setIsNextDisabled(false);
   }
 
   function handleNextQuestion() {
     setCurrentQuestion((prevQuestion) => prevQuestion + 1);
     setShowAnswer(false);
+    setIsNextDisabled(true);
     if (currentQuestion === questions.length - 1) {
       setShowResult(true);
       setCurrentQuestion(0);
@@ -42,6 +45,7 @@ export default function Home() {
     setShowResult(false);
     setCurrentQuestion(0);
     setScore(0);
+    setIsNextDisabled(true);
   }
 
   return (
@@ -97,7 +101,11 @@ export default function Home() {
             <p>
               {currentQuestion + 1} out of {questions.length}
             </p>
-            <button onClick={handleNextQuestion} className="next">
+            <button
+              onClick={handleNextQuestion}
+              disabled={isNextDisabled}
+              className="next"
+            >
               Next
             </button>
           </div>
