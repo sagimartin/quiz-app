@@ -126,6 +126,23 @@ button {
   font-weight: bold;
 }
 
+.score-message h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.red-text {
+  color: red;
+}
+
+.gray-text {
+  color: gray;
+}
+
+.green-text {
+  color: green;
+}
+
 .restart-button {
   width: fit-content;
 }

@@ -11,6 +11,16 @@ export default function Home() {
 
   const question = questions[currentQuestion];
 
+  const percentage = (score / questions.length) * 100;
+  let resultStyle = "result-message";
+  if (percentage < 60) {
+    resultStyle += " red-text";
+  } else if (percentage < 100) {
+    resultStyle += " gray-text";
+  } else {
+    resultStyle += " green-text";
+  }
+
   function handleOptionSelect(option) {
     setSelectedOption(option);
     setShowAnswer(true);
@@ -31,6 +41,7 @@ export default function Home() {
   function restartQuiz() {
     setShowResult(false);
     setCurrentQuestion(0);
+    setScore(0);
   }
 
   return (
@@ -38,9 +49,21 @@ export default function Home() {
       {showResults ? (
         <div className="score-message">
           <h2>
-            You scored {score} out {questions.length}{" "}
+            You scored {score} out of {questions.length}
           </h2>
-          <button className="restart-button" onClick={restartQuiz}>Start the Quiz Again</button>
+          <h3 className={resultStyle}>
+            That's {percentage.toFixed(2)}%{" "}
+            {percentage < 40
+              ? "You can do better. Try again!"
+              : percentage < 60
+              ? "Not bad, but room for improvement."
+              : percentage === 100
+              ? "Congratulations!"
+              : ""}
+          </h3>
+          <button className="restart-button" onClick={restartQuiz}>
+            Start the Quiz Again
+          </button>
         </div>
       ) : (
         <div className="quiz-app">
