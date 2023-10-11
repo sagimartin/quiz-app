@@ -92,6 +92,7 @@ body {
 }
 
 .quiz-footer {
+  min-height: 5rem;
   border-top: 3px solid purple;
   padding-top: 1rem;
   display: flex;
@@ -125,11 +126,13 @@ button {
 .score-message h2 {
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .score-message h3 {
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .red-text {
@@ -149,20 +152,7 @@ button {
 }
 
 @media (max-width: 900px) {
-  .quiz-app {
+  .quiz-app, .score-message {
     width: 80vw;
   }
-}
-
-.shake-animation {
-  animation: shake 0.5s ease;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  60% { transform: translateX(-5px); }
-  80% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
 }

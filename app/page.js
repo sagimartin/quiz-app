@@ -57,9 +57,9 @@ export default function Home() {
           </h2>
           <h3 className={resultStyle}>
             That's {percentage.toFixed(2)}%{" "}
-            {percentage < 40
+            {percentage < 41
               ? "You can do better. Try again!"
-              : percentage < 60
+              : percentage < 61
               ? "Not bad, but room for improvement."
               : percentage === 100
               ? "Congratulations!"
@@ -103,7 +103,7 @@ export default function Home() {
             </p>
             <button
               onClick={handleNextQuestion}
-              disabled={isNextDisabled}
+              style={{ display: isNextDisabled ? "none" : "block" }}
               className="next"
             >
               Next
