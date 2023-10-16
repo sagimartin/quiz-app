@@ -37,7 +37,7 @@ A sample quiz application that challenges your knowledge about various funny top
 
 # Installation 
 
-To explore the NASA-APOD website locally, follow these steps: 
+To explore the QUIZ-APP website locally, follow these steps: 
 
 1. Clone the repository:
    ```bash
