@@ -158,6 +158,6 @@ button {
 @media (max-width: 900px) {
   .quiz-app,
   .score-message {
-    width: 80vw;
+    width: 90vw;
   }
 }
