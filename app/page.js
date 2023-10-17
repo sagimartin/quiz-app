@@ -27,6 +27,11 @@ export default function Home() {
     setShowAnswer(true);
     if (option === question.answer) {
       setScore((prevScore) => prevScore + 1);
+      const audio = new Audio("/yes-my-master.mp3");
+      audio.play();
+    } else {
+      const audio = new Audio("/wah-wah-wah.mp3");
+      audio.play();
     }
     setIsNextDisabled(false);
   }
